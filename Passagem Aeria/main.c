@@ -11,8 +11,6 @@ int main(){
   Passagem* passagem = NULL;
   int menu;
   
-  
-  
   do{
 	
   	printf("\n\t|-----------------------------------------|\n");
@@ -33,6 +31,7 @@ int main(){
 		case 1:
 		  
           reserva_passagem();
+		  //lista_passagem = ler_arquivo(lista_passagem);
           lista_passagem = inserir_passagem(lista_passagem,passagem);
 		  
 		break;

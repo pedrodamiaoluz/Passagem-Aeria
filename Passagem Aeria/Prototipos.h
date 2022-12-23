@@ -23,6 +23,8 @@ void list_listar(Lista* lista_passagem);
 
 Lista* list_busca(Lista* lista_passagem);
 
+Lista* ler_arquivo(Lista* lista_passagem);
+
 void quantidade(Lista *lista_passagem);
 
 void quant_vagas(Lista *lista_passagem);

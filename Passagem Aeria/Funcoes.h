@@ -106,20 +106,20 @@ void exibe_passagem(Passagem* lista_passagem){
 	printf("Nome: %s\nOrigem: %s\nDestino: %s\\nNumero do Aviao: %d\n\n",lista_passagem->nome,lista_passagem->origem,lista_passagem->destino,lista_passagem->numero_aviao);
 }
 
-Lista* list_busca(Lista* lista_passagem){
+Lista * list_busca(Lista* lista_passagem){
 
-	Lista *aux = NULL;
+	
 	char nome_buscado[50];
 	
 	printf("\nInforme o nome que voce deseja buscar? ");
 	scanf("%s",nome_buscado);
 	
-	
+	Lista* aux;
 
-	/*while(aux && aux->infor->nome != nome_buscado){
+	/*while(aux && aux->infor->nome != EOF){
 		aux = aux->prox;
 		if(aux){
-           aux = lista_passagem;
+            aux = lista_passagem ;
 		   	printf("\n%s Elemento encontrado \n",nome_buscado);				 
 		}
 		else{
@@ -127,11 +127,12 @@ Lista* list_busca(Lista* lista_passagem){
 		}
         return aux;
 	}*/
-	    
-	for(aux=lista_passagem;aux!=NULL;aux=aux->prox){
+	
+
+	for(aux=lista_passagem; aux!=NULL; aux=aux->prox){
 		
-	  if(strcmp(aux->infor->nome,nome_buscado)==0){
-			printf("O nome %s foi encontrado!\n\n",nome_buscado);	
+	  if(strcmp(aux->infor->nome, nome_buscado)==NULL){
+			printf("O nome %s foi encontrado!\n\n", nome_buscado);	
 			
 		}
 		return aux;
@@ -139,15 +140,33 @@ Lista* list_busca(Lista* lista_passagem){
 	
 	printf("O nome buscado nao foi encontrado!\n\n");
 	printf("------------------\n");
-	
+
+	   return NULL;
 }	
 
+/*Lista* ler_arquivo(Lista* lista_passagem){
+	int n;
+	char linha[100];
 
-void quantidade(Lista *lista_passagem){
-	Lista* i;
+	FILE* arquivo = fopen("entradapassagem.txt", "r");
+	if(arquivo == NULL){
+		printf("Erro ao abir o arquivo: ");
+		exit(1);
+	}
+
+	while(fgets(linha,100,arquivo) != NULL){
+	  fscanf(arquivo, "%s\t%s\t%s\t%s\t%d\t\n",lista_passagem->infor->nome,lista_passagem->infor->origem,lista_passagem->infor->destino,&lista_passagem->infor->numero_aviao);
+	  n++;
+	}
+	return lista_passagem;
+}*/
+
+
+void quantidade(Lista* lista_passagem){
+	Lista * i;
 	int conta = 0;
 	
-	for(i = lista_passagem;i!=NULL;i=i->prox){
+	for(i = lista_passagem; i != NULL; i = i->prox){
 		conta++;
 	}
 	
@@ -156,16 +175,16 @@ void quantidade(Lista *lista_passagem){
 	printf("========================================\n\n");
 }
 
-void quant_vagas(Lista *lista_passagem){
-	Lista* i;
+void quant_vagas(Lista* lista_passagem){
+	Lista * i;
 	int pass = 100;
 	
-	for(i=lista_passagem;i!=NULL;i=i->prox){
+	for(i = lista_passagem; i != NULL; i = i->prox){
 		pass--;
 	}
 	
 	printf("========== QUANTIDADE DE VAGAS ==========\n");
-	printf("\n\t existe %d passageiro!\n\n",pass);
+	printf("\n\t existe %d Vagas!\n\n",pass);
 	printf("=======================================\n\n");
 }
  
