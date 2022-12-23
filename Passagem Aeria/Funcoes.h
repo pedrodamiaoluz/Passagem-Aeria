@@ -46,7 +46,6 @@ Passagem* reserva_passagem(void){
 		printf("Erro ao abir o arquivo: ");
 		exit(1);
 	}
-	//fscanf(arquivo,"%s	%s	%s	%d",passagem->nome,passagem->origem,passagem->destino,passagem->numero_aviao);
 	
 	fprintf(arquivo, "%s\t%s\t%s\t%d\t\n", passagem->nome,passagem->origem,passagem->destino,passagem->numero_aviao);
 	fclose(arquivo);
@@ -109,7 +108,7 @@ void exibe_passagem(Passagem* lista_passagem){
 
 Lista* list_busca(Lista* lista_passagem){
 
-	Lista *aux, *au = NULL;
+	Lista *aux = NULL;
 	char nome_buscado[50];
 	
 	printf("\nInforme o nome que voce deseja buscar? ");
@@ -117,29 +116,29 @@ Lista* list_busca(Lista* lista_passagem){
 	
 	
 
-	while(aux && aux->infor != nome_buscado){
+	/*while(aux && aux->infor->nome != nome_buscado){
 		aux = aux->prox;
 		if(aux){
-           au = aux;
-		   	printf("\n%s Elemento encontrado \n",nome_buscado);
+           aux = lista_passagem;
+		   	printf("\n%s Elemento encontrado \n",nome_buscado);				 
 		}
 		else{
 			printf("\n%s Elemento nao encontrado\n",nome_buscado);
 		}
-         return nome_buscado;
-	}
-	
-	/*for(aux=lista_passagem;aux!=NULL;aux=aux->prox){
+        return aux;
+	}*/
+	    
+	for(aux=lista_passagem;aux!=NULL;aux=aux->prox){
 		
 	  if(strcmp(aux->infor->nome,nome_buscado)==0){
-			printf("O nome %s foi encontrado!\n\n",nome_buscado);
+			printf("O nome %s foi encontrado!\n\n",nome_buscado);	
 			
-			return aux;
 		}
+		return aux;
 	}
 	
 	printf("O nome buscado nao foi encontrado!\n\n");
-	printf("------------------\n");*/
+	printf("------------------\n");
 	
 }	
 

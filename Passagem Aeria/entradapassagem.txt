@@ -1,9 +1,2 @@
-Pedro	Rafael Fernandes	Pau Dos Ferros	1234	
-Andrer	Pau dos ferros	Rafael Fernandes	1234	
-Luis	Luis Gomes	Alexandria	2345
-Gisberto	Pau dos feros	Luis Gomes	12345	
-Samuel	Rafael Fernandes	Agua Nova	456	
-Vinicius	Rafael Fernandes	Pau dos Ferros	1234	
-p	u	o	78	
-Paulinho	Martins	Pau dos ferros	345	
-T	y	u	78	
+Pedro	Rafael Fernandes	Pau Dos Ferros	456	
+Samuel	Alexandria	Luis Gomes	789	

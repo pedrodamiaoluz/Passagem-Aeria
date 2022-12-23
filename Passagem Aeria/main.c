@@ -51,6 +51,15 @@ int main(){
 		   lista_passagem = list_busca(lista_passagem);
 		break;
 
+		case 5:
+		   quant_vagas(lista_passagem);
+		break;
+
+		case 6:
+		   quantidade(lista_passagem);
+		   
+		break;
+
 		case 7:
 		  printf("Obrigado por ter usado o sistema de passagem aerias.\n");
 		break;
