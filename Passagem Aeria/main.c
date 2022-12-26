@@ -13,15 +13,7 @@ int main(){
   
   do{
 	
-  	printf("\n\t|-----------------------------------------|\n");
-  	printf("\t| 1 - Realizar reserva                    |\n");
-	printf("\t| 2 - Excluir reseva                      |\n");
-	printf("\t| 3 - listar reservas                     |\n");
-	printf("\t| 4 - Buscar reserva                      |\n");
-	printf("\t| 5 - Cunsultar vagas disponiveis         |\n");
-	printf("\t| 6 - Consultar quantidades de passageiro |\n");
-	printf("\t| 7 - Sair                                |\n");
-	printf("\t|-----------------------------------------|\n");   
+	menus();
 	            
     printf("\n-> Informe a opcao que vc deseja ");
     scanf("%d",&menu);
@@ -29,10 +21,10 @@ int main(){
 
 	switch(menu){
 		case 1:
-		  
           reserva_passagem();
 		  //lista_passagem = ler_arquivo(lista_passagem);
           lista_passagem = inserir_passagem(lista_passagem,passagem);
+		  
 		  
 		break;
 		

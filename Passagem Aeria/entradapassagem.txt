@@ -1,2 +1,4 @@
-pedro	r	t	123	
-maria	t	y	345	
+Pedro	e	r	123	
+Maria	w	r	345	
+Pedro	Patu	Apodi	123	
+Pedro	AAlexandria	Apodi	234	

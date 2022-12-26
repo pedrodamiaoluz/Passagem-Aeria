@@ -8,6 +8,7 @@
 	char origem[50];
 	char destino[50];
 	int numero_aviao;
+	
 };
 
  struct Lista{
@@ -15,6 +16,11 @@
 	struct Lista* prox;
 	
 };
+
+void menus(){
+
+	 printf("\t1 - Realizar reserva\n\t2 - Excluir reseva\n\t3 - listar reservas\n\t4 - Buscar reserva\n\t5 - Cunsultar vagas disponiveis\n\t6 - Consultar quantidades de passageiro\n\t7 - Sair\n");
+}
 
 
 Passagem* reserva_passagem(void){
@@ -53,12 +59,13 @@ Passagem* reserva_passagem(void){
 	return passagem;
 }
 
-Lista* list_retira(Lista *l){
+Lista* list_retira(Lista* l){
 	FILE* arquivo;
 	FILE* arquivomodificado;
-	Lista* ant;
-	Lista* p = l;
+	//Lista* ant;
+	//Lista* p = l;
 	char nome[50];
+	
 
 	arquivo = fopen("entradapassagem.txt", "rb");
 	arquivomodificado = fopen("entradapassagems.txt", "ab");
@@ -70,9 +77,9 @@ Lista* list_retira(Lista *l){
 		printf("\nInforme o nome do passageiro a ser removido: ");
 	    gets(nome);
 
-		while(fread(ant, sizeof(Lista), 1, arquivo) == 1){
-			if(strcmp(nome, ant.infor) != 0){
-				fwrite(ant, sizeof(Lista),1, arquivomodificado);
+		while(fread(l, sizeof(Lista), 1, arquivo) == 1){
+			if(strcmp(nome, l->infor) != 0){
+				fwrite(l, sizeof(Lista), 1, arquivomodificado);
 			}
 
 		}
@@ -83,7 +90,6 @@ Lista* list_retira(Lista *l){
 	 remove("entradapassagem.txt");
 	 rename("entradapassagems.txt", "entradapassagem.txt");
 	 printf("Nome Excluido!\n");
-	 
 	 getch();
 	
 	
@@ -110,7 +116,7 @@ Lista* list_retira(Lista *l){
 	printf("==== Nome removido com sucesso ====\n\n");
 	free(p);
 	return l;*/
-	return and;
+	return arquivomodificado;
 }
 
 Lista* inserir_passagem(Lista* lista_passagem,Passagem * nome){

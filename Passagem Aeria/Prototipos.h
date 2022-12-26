@@ -9,11 +9,11 @@ typedef struct Lista Lista;
 
 Lista* lista_cria;
 
+void menus();
+
 Passagem* reserva_passagem(void);
 
 Lista* list_retira(Lista*l);
-
-void imprimindo(Lista *lista);
 
 Lista* inserir_passagem(Lista* lista_passagem,Passagem * nome);
 
