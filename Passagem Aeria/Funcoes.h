@@ -54,11 +54,40 @@ Passagem* reserva_passagem(void){
 }
 
 Lista* list_retira(Lista *l){
-	char nome[50];
-	Lista* ant = NULL;
+	FILE* arquivo;
+	FILE* arquivomodificado;
+	Lista* ant;
 	Lista* p = l;
+	char nome[50];
+
+	arquivo = fopen("entradapassagem.txt", "rb");
+	arquivomodificado = fopen("entradapassagems.txt", "ab");
+
+	if(arquivo == NULL || arquivomodificado == NULL){
+		printf("Problema em abrir o arquivo: ");
+	}else{
+		fflush(stdin);
+		printf("\nInforme o nome do passageiro a ser removido: ");
+	    gets(nome);
+
+		while(fread(ant, sizeof(Lista), 1, arquivo) == 1){
+			if(strcmp(nome, ant.infor) != 0){
+				fwrite(ant, sizeof(Lista),1, arquivomodificado);
+			}
+
+		}
+
+	}
+     fclose(arquivo);
+	 fclose(arquivomodificado);
+	 remove("entradapassagem.txt");
+	 rename("entradapassagems.txt", "entradapassagem.txt");
+	 printf("Nome Excluido!\n");
+	 
+	 getch();
 	
-	printf("\nInforme o nome do passageiro a ser removido: ");
+	
+	/*printf("\nInforme o nome do passageiro a ser removido: ");
 	scanf("%s",nome);
 	fflush(stdin);
 		
@@ -67,6 +96,8 @@ Lista* list_retira(Lista *l){
 		return l;
 		ant = p;
 		p = p->prox;
+
+		
 	}
 	
 	if(ant==NULL){
@@ -78,8 +109,8 @@ Lista* list_retira(Lista *l){
 	
 	printf("==== Nome removido com sucesso ====\n\n");
 	free(p);
-	return l;
-	
+	return l;*/
+	return and;
 }
 
 Lista* inserir_passagem(Lista* lista_passagem,Passagem * nome){
@@ -108,9 +139,8 @@ void exibe_passagem(Passagem* lista_passagem){
 
 Lista * list_busca(Lista* lista_passagem){
 
-	
 	char nome_buscado[50];
-	
+
 	printf("\nInforme o nome que voce deseja buscar? ");
 	scanf("%s",nome_buscado);
 	
@@ -128,13 +158,14 @@ Lista * list_busca(Lista* lista_passagem){
         return aux;
 	}*/
 	
-
+    
 	for(aux=lista_passagem; aux!=NULL; aux=aux->prox){
 		
 	  if(strcmp(aux->infor->nome, nome_buscado)==NULL){
 			printf("O nome %s foi encontrado!\n\n", nome_buscado);	
 			
 		}
+		
 		return aux;
 	}
 	
