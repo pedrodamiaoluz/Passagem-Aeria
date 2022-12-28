@@ -9,7 +9,7 @@ typedef struct Lista Lista;
 
 Lista* lista_cria;
 
-void menus();
+void menu();
 
 Passagem* reserva_passagem(void);
 

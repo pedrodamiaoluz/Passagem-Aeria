@@ -17,9 +17,10 @@
 	
 };
 
-void menus(){
+void menu(){
 
-	 printf("\t1 - Realizar reserva\n\t2 - Excluir reseva\n\t3 - listar reservas\n\t4 - Buscar reserva\n\t5 - Cunsultar vagas disponiveis\n\t6 - Consultar quantidades de passageiro\n\t7 - Sair\n");
+	 printf("\t1 - Realizar reserva\n\t2 - Excluir reseva\n\t3 - listar reservas\n\t4 - Buscar reserva\n");
+	 printf("\t5 - Cunsultar vagas disponiveis\n\t6 - Consultar quantidades de passageiro\n\t7 - Sair\n");
 }
 
 
@@ -128,15 +129,15 @@ Lista* inserir_passagem(Lista* lista_passagem,Passagem * nome){
 
 void list_listar(Lista* lista_passagem){
 	Lista* cont;
-	
-	for(cont=lista_passagem;cont!=NULL;cont=cont->prox){
+
+	for(cont=lista_passagem; cont!=NULL; cont=cont->prox){
 		printf("----passagem----\n");
 		
-		exibe_passagem(cont->infor);
-		
+	     exibe_passagem(cont->infor);
 		
 		printf("------------------\n");
 	}
+
 }
 
 void exibe_passagem(Passagem* lista_passagem){
