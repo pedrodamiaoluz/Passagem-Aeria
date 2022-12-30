@@ -13,7 +13,7 @@ void menu();
 
 Passagem* reserva_passagem(void);
 
-Lista* list_retira(Lista*l);
+Lista* list_retira(Lista*lt);
 
 Lista* inserir_passagem(Lista* lista_passagem,Passagem * nome);
 
