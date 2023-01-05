@@ -158,12 +158,12 @@ void exibe_passagem(Passagem* lista_passagem){
 }
 
 //Essa função e para buscar um elemento da lista.
-Lista * list_busca(Lista* lista_passagem){
+Lista* list_busca(Lista* lista_passagem){
 
-	
+	Lista *aux;
 	char nome_buscado[50];
 	
-	Lista* aux = (Lista*)malloc(sizeof(Lista));
+	
 
 	printf("\nInforme o nome que voce deseja buscar? ");
 	scanf("%s",&nome_buscado);
@@ -171,19 +171,20 @@ Lista * list_busca(Lista* lista_passagem){
 
 	
 	 FILE* p = fopen("entradapassagem.txt", "r");
-
+    
 	while(fscanf(p, "%s", nome_buscado) != EOF){
 		 aux = aux->prox;
 		if(aux){
             aux = lista_passagem;
 		   	printf("\n%s Elemento encontrado \n",nome_buscado);				 
-		}else{
+		}
+		else{
 			printf("\n%s Elemento nao encontrado\n",nome_buscado);
 		}
         return aux;
 		
 	}
-	 free(p);
+	 //free(p);
 	
 	/*for(aux=lista_passagem; aux!=NULL; aux=aux->prox){
 		
