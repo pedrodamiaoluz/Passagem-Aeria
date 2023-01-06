@@ -176,15 +176,17 @@ Lista* list_busca(Lista* lista_passagem){
 		 aux = aux->prox;
 		if(aux){
             aux = lista_passagem;
-		   	printf("\n%s Elemento encontrado \n",nome_buscado);				 
+			printf("\n%s Elemento encontrado \n",nome_buscado);
 		}
 		else{
 			printf("\n%s Elemento nao encontrado\n",nome_buscado);
 		}
         return aux;
 		
+		
 	}
-	 //free(p);
+	 fclose(aux);
+	 free(p);
 	
 	/*for(aux=lista_passagem; aux!=NULL; aux=aux->prox){
 		
@@ -196,7 +198,7 @@ Lista* list_busca(Lista* lista_passagem){
 		
 		return aux;
 	}
-	
+	fscanf(p, "%s", nome_buscado);
 	printf("O nome buscado nao foi encontrado!\n\n");
 	printf("------------------\n");
 
