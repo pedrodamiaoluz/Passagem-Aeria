@@ -161,6 +161,7 @@ void exibe_passagem(Passagem* lista_passagem){
 Lista* list_busca(Lista* lista_passagem){
 
 	Lista *aux;
+	int cont;
 	char nome_buscado[50];
 	
 	
@@ -173,17 +174,16 @@ Lista* list_busca(Lista* lista_passagem){
 	 FILE* p = fopen("entradapassagem.txt", "r");
     
 	while(fscanf(p, "%s", nome_buscado) != EOF){
-		 aux = aux->prox;
-		if(aux){
+		aux = aux->prox;
+		if(aux != EOF){
             aux = lista_passagem;
 			printf("\n%s Elemento encontrado \n",nome_buscado);
+			
 		}
 		else{
 			printf("\n%s Elemento nao encontrado\n",nome_buscado);
 		}
-        return aux;
-		
-		
+		return aux;
 	}
 	 fclose(aux);
 	 free(p);
@@ -191,18 +191,18 @@ Lista* list_busca(Lista* lista_passagem){
 	/*for(aux=lista_passagem; aux!=NULL; aux=aux->prox){
 		
 	  if(strcmp(aux->infor->nome, nome_buscado)==NULL){
-			
+			fscanf(p, "%s", nome_buscado);
 			printf("O nome %s foi encontrado!\n\n", nome_buscado);	
 			
 		}
 		
 		return aux;
-	}
-	fscanf(p, "%s", nome_buscado);
-	printf("O nome buscado nao foi encontrado!\n\n");
-	printf("------------------\n");
+	}*/
+	//fscanf(p, "%s", nome_buscado);
+	//printf("O nome buscado nao foi encontrado!\n\n");
+	//printf("------------------\n");
 
-	   return NULL;*/
+	  // return NULL;
 	   
 }	
 
